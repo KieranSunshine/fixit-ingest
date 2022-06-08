@@ -1,7 +1,7 @@
 ﻿using CommandLine;
 using Serilog;
 
-namespace fixit_ingest
+namespace FixitIngest
 {
 	internal static class Program
 	{

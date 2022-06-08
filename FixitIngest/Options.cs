@@ -1,6 +1,6 @@
 ﻿using CommandLine;
 
-namespace fixit_ingest
+namespace FixitIngest
 {
 	// ReSharper disable once ClassNeverInstantiated.Global
 	public class Options

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fixit-ingest", "fixit-ingest\fixit-ingest.csproj", "{1EB217C6-F1AD-4C9A-8590-3EF2782D3A06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixitIngest", "FixitIngest\FixitIngest.csproj", "{1EB217C6-F1AD-4C9A-8590-3EF2782D3A06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
