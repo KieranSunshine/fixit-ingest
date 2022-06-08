@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Fixit.Models\Fixit.Models.csproj" />
+    </ItemGroup>
+
 </Project>

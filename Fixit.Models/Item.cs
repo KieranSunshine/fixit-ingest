@@ -1,5 +1,5 @@
 ﻿namespace Fixit.Models;
 
-public class Class1
+public class Item
 {
 }
