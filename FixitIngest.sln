@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixitIngest", "FixitIngest\FixitIngest.csproj", "{1EB217C6-F1AD-4C9A-8590-3EF2782D3A06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixit.Parsers", "Fixit.Parsers\Fixit.Parsers.csproj", "{536C20E6-2A1D-4507-9B0A-A34443AFA38F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{1EB217C6-F1AD-4C9A-8590-3EF2782D3A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB217C6-F1AD-4C9A-8590-3EF2782D3A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EB217C6-F1AD-4C9A-8590-3EF2782D3A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536C20E6-2A1D-4507-9B0A-A34443AFA38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536C20E6-2A1D-4507-9B0A-A34443AFA38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536C20E6-2A1D-4507-9B0A-A34443AFA38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536C20E6-2A1D-4507-9B0A-A34443AFA38F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
