@@ -10,4 +10,12 @@
       <ProjectReference Include="..\Fixit.Models\Fixit.Models.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Model\Internal" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Model\Internal\Docs.cs" />
+    </ItemGroup>
+
 </Project>

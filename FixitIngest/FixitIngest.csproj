@@ -13,4 +13,8 @@
       <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Fixit.Parsers\Fixit.Parsers.csproj" />
+    </ItemGroup>
+
 </Project>

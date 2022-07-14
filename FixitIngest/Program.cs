@@ -1,6 +1,5 @@
-﻿using System.Text.Json;
-using CommandLine;
-using FixitIngest.Model;
+﻿using CommandLine;
+using Fixit.Parsers;
 using Serilog;
 
 namespace FixitIngest
@@ -28,29 +27,8 @@ namespace FixitIngest
 
 		static void RunOptions(Options options)
 		{
-			string data;
-			using (var reader = new StreamReader(options.FilePath))
-			{
-				data = reader.ReadToEnd();
-			}
-
-			IReadOnlyCollection<ClassGrouping>? groupings;
-			try
-			{
-				groupings = JsonSerializer.Deserialize<IReadOnlyCollection<ClassGrouping>>(data);
-			}
-			catch (Exception e) when (e is ArgumentNullException or JsonException or NotSupportedException)
-			{
-				Log.Error("Failed to deserialize Docs.json file, {e}", e);
-				throw;
-			}
-
-			if (groupings is null)
-				throw new ArgumentNullException(); // TODO: throw appropriate error.
-
-			var items = groupings.FirstOrDefault(t => t.NativeClass == "Class'/Script/FactoryGame.FGItemDescriptor'");
-			if (items is null)
-				throw new ArgumentNullException(); // TODO: throw appropriate error.
+			var docs = File.ReadAllText(options.FilePath);
+			var data = DocsParser.Parse(docs);
 		}
 
 		static void HandleParserErrors(IEnumerable<Error> errors)
