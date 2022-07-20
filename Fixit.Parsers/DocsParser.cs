@@ -15,10 +15,10 @@ public static class DocsParser
         if (docs is null)
             throw new ArgumentException(); // TODO: Return proper error
 
-        var dictionary = docs.ToDictionary(k => k.NativeClass, v => v.Classes);
+        var dictionary = docs.ToDictionary(k => k.NativeClass, v => v.Classes.ToList());
         var output = new Docs
         {
-            Items = dictionary["Class'/Script/FactoryGame.FGItemDescriptor'"].Cast<Item>()
+            Items = ItemsParser.Parse(dictionary[Constants.NativeClasses.ItemDescriptor])
         };
 
         return output;

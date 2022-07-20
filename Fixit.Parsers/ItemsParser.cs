@@ -1,11 +1,26 @@
-﻿using Fixit.Models;
+using System.Text.Json;
+using Fixit.Models;
 
 namespace Fixit.Parsers;
 
-public class ItemsParser : IParser<Item>
+public static class ItemsParser
 {
-    public IEnumerable<Item> Parse(string docs)
+    public static IEnumerable<Item> Parse(List<JsonElement> input)
     {
-        throw new NotImplementedException();
+        var items = new List<Item>();
+        if (!input.Any())
+            return items;
+
+        foreach (var element in input)
+        {
+            var item = element.Deserialize<Model.Internal.Item>();
+            if (item is null)
+                continue; //TODO : Log.
+           
+            var dto = item.ToDto();
+            items.Add(dto);
+        }
+
+        return items;
     }
 }

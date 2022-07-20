@@ -11,10 +11,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Model\Internal" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Compile Remove="Model\Internal\Docs.cs" />
     </ItemGroup>
 

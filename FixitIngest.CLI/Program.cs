@@ -2,7 +2,7 @@
 using Fixit.Parsers;
 using Serilog;
 
-namespace FixitIngest
+namespace FixitIngest.CLI
 {
 	internal static class Program
 	{
