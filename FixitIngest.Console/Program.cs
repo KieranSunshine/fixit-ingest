@@ -13,9 +13,14 @@ namespace FixitIngest.Console // Note: actual namespace depends on the project n
             var config = host.Services.GetRequiredService<IConfiguration>();
 
             var path = config.GetValue<string>("Configuration:DocsFilePath");
-            if (string.IsNullOrWhiteSpace(path) || !Path.IsPathFullyQualified(path))
+            if (string.IsNullOrWhiteSpace(path))
             {
-                throw new Exception("Configuration error"); // make Configuration Exception.
+                path = Path.GetFullPath("Docs.json");
+            }
+            else
+            {
+                if (!Path.IsPathFullyQualified(path))
+                    throw new Exception("Configuration error"); // make Configuration Exception.
             }
 
             string docs;
