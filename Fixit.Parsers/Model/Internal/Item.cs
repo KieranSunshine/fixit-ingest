@@ -60,25 +60,35 @@ public class Item
 
     public Models.Item ToDto()
     {
-        return new()
+        Models.Item item;
+        try
         {
-            DisplayName = DisplayName,
-            Description = Description,
-            AbbreviatedDisplayName = AbbreviatedDisplayName,
-            StackSize = StackSize,
-            CanBeDiscarded = bool.Parse(CanBeDiscarded),
-            RememberPickUp = bool.Parse(RememberPickUp),
-            EnergyValue = double.Parse(EnergyValue),
-            RadioactiveDecay = double.Parse(RadioactiveDecay),
-            Form = Form,
-            SmallIcon = SmallIcon,
-            PersitentBigIcon = PersistentBigIcon,
-            SubCategories = SubCategories,
-            MenuPriority = double.Parse(MenuPriority),
-            FluidColor = FluidColor,
-            GasColor = GasColor,
-            ResourceSinkPoints = int.Parse(ResourceSinkPoints),
-            BuildMenuPriority = double.Parse(BuildMenuPriority)
-        };
+            item = new()
+            {
+                DisplayName = DisplayName,
+                Description = Description,
+                AbbreviatedDisplayName = AbbreviatedDisplayName,
+                StackSize = StackSize,
+                CanBeDiscarded = bool.Parse(CanBeDiscarded),
+                RememberPickUp = bool.Parse(RememberPickUp),
+                EnergyValue = double.Parse(EnergyValue),
+                RadioactiveDecay = double.Parse(RadioactiveDecay),
+                Form = Form,
+                SmallIcon = SmallIcon,
+                PersitentBigIcon = PersistentBigIcon,
+                SubCategories = SubCategories,
+                MenuPriority = !string.IsNullOrWhiteSpace(MenuPriority) ? double.Parse(MenuPriority) : null,
+                FluidColor = FluidColor,
+                GasColor = GasColor,
+                ResourceSinkPoints = int.Parse(ResourceSinkPoints),
+                BuildMenuPriority = !string.IsNullOrWhiteSpace(BuildMenuPriority) ? double.Parse(BuildMenuPriority) : null
+            };
+        }
+        catch (Exception e)
+        {
+            throw;
+        }
+
+        return item;
     }
 }

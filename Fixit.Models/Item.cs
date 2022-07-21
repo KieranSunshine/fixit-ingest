@@ -14,9 +14,9 @@ public record Item
     public string SmallIcon { get; set; }
     public string PersitentBigIcon { get; set; }
     public string SubCategories { get; set; }
-    public double MenuPriority { get; set; }
+    public double? MenuPriority { get; set; }
     public string FluidColor { get; set; }
     public string GasColor { get; set; }
     public int ResourceSinkPoints { get; set; }
-    public double BuildMenuPriority { get; set; }
+    public double? BuildMenuPriority { get; set; }
 }
