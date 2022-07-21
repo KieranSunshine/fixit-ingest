@@ -9,7 +9,7 @@ public record Docs
     public IEnumerable<object> Schematics { get; set; } = Enumerable.Empty<object>();
     public IEnumerable<object> Walls { get; set; } = Enumerable.Empty<object>();
     public IEnumerable<object> Doors { get; set; } = Enumerable.Empty<object>();
-    public IEnumerable<object> Recipes { get; set; } = Enumerable.Empty<object>();
+    public IEnumerable<Recipe> Recipes { get; set; } = Enumerable.Empty<Recipe>();
     public IEnumerable<object> CustomizationRecipes { get; set; } = Enumerable.Empty<object>();
     public IEnumerable<object> Buildings { get; set; } = Enumerable.Empty<object>();
     public IEnumerable<object> CornerWalls { get; set; } = Enumerable.Empty<object>();

@@ -33,7 +33,7 @@ namespace FixitIngest.Console
 					}
 					catch (Exception e)
 					{
-						_logger.LogError("Unhandled Exception!", e);
+						_logger.LogError(e, "Unhandled Exception!");
 					}
 					finally
 					{

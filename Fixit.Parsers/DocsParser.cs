@@ -18,7 +18,8 @@ public static class DocsParser
         var dictionary = docs.ToDictionary(k => k.NativeClass, v => v.Classes.ToList());
         var output = new Docs
         {
-            Items = ItemsParser.Parse(dictionary[Constants.NativeClasses.ItemDescriptor])
+            Items = ItemsParser.Parse(dictionary[Constants.NativeClasses.ItemDescriptor]),
+            Recipes = RecipeParser.Parse(dictionary[Constants.NativeClasses.Recipe])
         };
 
         return output;
