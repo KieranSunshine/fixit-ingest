@@ -1,41 +1,40 @@
-﻿using Fixit.Parsers;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
+using Serilog.Events;
 
 namespace FixitIngest.Console // Note: actual namespace depends on the project name.
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class Program
     {
         static async Task Main(string[] args)
         {
-            using var host = Host.CreateDefaultBuilder(args).Build();
-            var config = host.Services.GetRequiredService<IConfiguration>();
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .Enrich.FromLogContext()
+                .WriteTo.Console()
+                .CreateLogger();
 
-            var path = config.GetValue<string>("Configuration:DocsFilePath");
-            if (string.IsNullOrWhiteSpace(path))
-            {
-                path = Path.GetFullPath("Docs.json");
-            }
-            else
-            {
-                if (!Path.IsPathFullyQualified(path))
-                    throw new Exception("Configuration error"); // make Configuration Exception.
-            }
-
-            string docs;
             try
             {
-                docs = await File.ReadAllTextAsync(path);
+                await Host.CreateDefaultBuilder(args)
+                    .UseSerilog()
+                    .ConfigureServices((context, services) =>
+                    {
+                        services.AddHostedService<IngestService>();
+                    })
+                    .RunConsoleAsync();
             }
             catch (Exception e)
             {
-                System.Console.WriteLine(e);
+                Log.Error(e, "An error occurred.");
                 throw;
             }
-            var data = DocsParser.Parse(docs);
-
-            await host.RunAsync();
+            finally
+            {
+                Log.CloseAndFlush();    
+            }
         }
     }
 }
