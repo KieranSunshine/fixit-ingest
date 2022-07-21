@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixit.Models", "Fixit.Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixitIngest.Console", "FixitIngest.Console\FixitIngest.Console.csproj", "{57167A99-E240-407A-8D76-B00EC05F4DD6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{09D4CC70-6A82-46B3-98FB-36025F9D59C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{57167A99-E240-407A-8D76-B00EC05F4DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57167A99-E240-407A-8D76-B00EC05F4DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57167A99-E240-407A-8D76-B00EC05F4DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{536C20E6-2A1D-4507-9B0A-A34443AFA38F} = {09D4CC70-6A82-46B3-98FB-36025F9D59C1}
+		{39DB3D37-C0CC-46A6-BA69-7357A3B5C2DB} = {09D4CC70-6A82-46B3-98FB-36025F9D59C1}
 	EndGlobalSection
 EndGlobal
