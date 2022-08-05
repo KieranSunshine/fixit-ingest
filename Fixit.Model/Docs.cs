@@ -1,6 +1,4 @@
-using Fixit.Models;
-
-namespace Fixit.Parsers.Model;
+namespace Fixit.Model;
 
 public record Docs
 {

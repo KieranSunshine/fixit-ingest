@@ -1,10 +1,10 @@
-namespace Fixit.Models;
+namespace Fixit.Model;
 
 public class Recipe
 {
     public string FullName { get; set; }
     public string DisplayName { get; set; }
-    public string Ingredients { get; set; }
+    public List<Ingredient> Ingredients { get; set; } = new();
     public string Product { get; set; }
     public double? ManufacturingMenuPriority { get; set; }
     public double? ManufacturingDuration { get; set; }

@@ -7,11 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Fixit.Models\Fixit.Models.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Remove="Model\Internal\Docs.cs" />
+      <ProjectReference Include="..\Fixit.Model\Fixit.Model.csproj" />
     </ItemGroup>
 
 </Project>

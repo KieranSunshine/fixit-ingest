@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixit.Parsers", "Fixit.Parsers\Fixit.Parsers.csproj", "{536C20E6-2A1D-4507-9B0A-A34443AFA38F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixit.Models", "Fixit.Models\Fixit.Models.csproj", "{39DB3D37-C0CC-46A6-BA69-7357A3B5C2DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fixit.Model", "Fixit.Model\Fixit.Model.csproj", "{39DB3D37-C0CC-46A6-BA69-7357A3B5C2DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixitIngest.Console", "FixitIngest.Console\FixitIngest.Console.csproj", "{57167A99-E240-407A-8D76-B00EC05F4DD6}"
 EndProject

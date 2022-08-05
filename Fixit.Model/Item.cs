@@ -1,7 +1,8 @@
-﻿namespace Fixit.Models;
+﻿namespace Fixit.Model;
 
 public record Item
 {
+    public string ClassName { get; set; }
     public string DisplayName { get; set; }
     public string Description { get; set; }
     public string AbbreviatedDisplayName { get; set; }
